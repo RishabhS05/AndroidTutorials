@@ -70,3 +70,5 @@ class InitBlock {
     }
 }
 
+/** Next Inheritance
+* */
