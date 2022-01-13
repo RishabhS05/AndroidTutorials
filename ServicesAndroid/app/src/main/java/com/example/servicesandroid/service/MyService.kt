@@ -28,6 +28,7 @@ class MyService : Service() {
      * */
     private lateinit var media: MediaPlayer
     override fun onBind(p0: Intent?): IBinder? {
+        // A client is binding to the service with bindService()
         return null
     }
 

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.servicesandroid">
+<!-- permission for creating forground service. -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
         android:allowBackup="true"
@@ -18,6 +20,7 @@
             </intent-filter>
         </activity>
         <service android:name=".service.MyService"/>
+        <service android:name=".service.MyForegroundService"/>
     </application>
 
 </manifest>

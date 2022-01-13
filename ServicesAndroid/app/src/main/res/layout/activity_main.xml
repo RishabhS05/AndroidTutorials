@@ -11,7 +11,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Play your default ringtone" />
 
     <Button
         android:id="@+id/playBtn"
@@ -25,10 +25,22 @@
         android:layout_height="wrap_content"
         android:text="Stop"
         android:layout_margin="16dp" />
-    <Button
-        android:id="@+id/pauseBtn"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pause"
+        android:text="Play your default ringtone foreground" />
+    <Button
+        android:id="@+id/playForegroundBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Play Foreground"
         android:layout_margin="16dp" />
+    <Button
+        android:id="@+id/stopForegroundBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Stop Forground"
+        android:layout_margin="16dp" />
+
 </LinearLayout>
