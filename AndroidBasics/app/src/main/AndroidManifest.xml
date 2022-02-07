@@ -13,8 +13,9 @@
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
+                <!--                To specify the entry point for the application  -->
                 <action android:name="android.intent.action.MAIN" />
-
+                <!--this specify this should appear as first screen-->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

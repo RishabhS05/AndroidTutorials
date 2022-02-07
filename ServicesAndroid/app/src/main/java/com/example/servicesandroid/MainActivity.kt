@@ -15,6 +15,19 @@ import android.content.Context
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+    }
+    private fun foregroundServiceRunning(): Boolean {
+        val activityManager = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
+        for (service in activityManager.getRunningServices(Int.MAX_VALUE)) {
+            if (MyForegroundService::class.java.name == service.service.className) {
+                return true
+            }
+        }
+        return false
+    }
+
+    override fun onResume() {
+        super.onResume()
         setContentView(R.layout.activity_main)
         val playBtn = findViewById<Button>(R.id.playBtn)
         val stopBtn = findViewById<Button>(R.id.stopBtn)
@@ -39,14 +52,5 @@ class MainActivity : AppCompatActivity() {
             }
         }
         stopforeBtn.setOnClickListener { stopService(Intent(this@MainActivity, MyForegroundService::class.java)) }
-    }
-    private fun foregroundServiceRunning(): Boolean {
-        val activityManager = getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
-        for (service in activityManager.getRunningServices(Int.MAX_VALUE)) {
-            if (MyForegroundService::class.java.name == service.service.className) {
-                return true
-            }
-        }
-        return false
     }
 }

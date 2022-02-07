@@ -14,6 +14,7 @@ import com.example.servicesandroid.R
 import android.app.NotificationManager
 
 import android.app.NotificationChannel
+import android.os.Looper
 
 /**
  * Foreground Service : This is a service that stays alive even when the app is terminated and run the task until it finish that task or stop by the user.
@@ -67,7 +68,6 @@ class MyForegroundService : Service() {
             .setContentTitle("Music is playing")
             .setContentText("Your Favourite music is playing..")
             .setSmallIcon(R.mipmap.ic_launcher_round)
-
             .setCategory(NotificationCompat.CATEGORY_CALL)
             .setChannelId(NOTIFICATION_CHANNEL)
 //            .setFullScreenIntent(fullScreenPendingIntent, true)
