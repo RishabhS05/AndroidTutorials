@@ -6,8 +6,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.persistableBundleOf
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.example.fragments.MainActivity
 import com.example.fragments.R
+import com.example.viewModels.MainViewModel
 
 class Fragment1 : Fragment(R.layout.layout_fragment_one) {
 
@@ -37,7 +41,7 @@ class Fragment1 : Fragment(R.layout.layout_fragment_one) {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         printFragmentStatus("onCreateView Called", isViewAdded = false)
-//
+
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
@@ -95,15 +99,14 @@ class Fragment1 : Fragment(R.layout.layout_fragment_one) {
     }
 
     fun printFragmentStatus(fragmentCallBack: String, isViewAdded: Boolean = true) {
-        isAdded
-        Log.d(
-            Companion.TAG,
-            "FragmentLifeCycle : $${lifecycle.currentState.name}   Fragment CallBack : $fragmentCallBack  ${
-                if (isViewAdded) {
-                    "Fragment View Lifecycle : ${viewLifecycleOwner.lifecycle.currentState.name}"
-                } else ""
-            } "
-        )
+
+        val log: String = "Fragment LifeCycle : $${lifecycle.currentState.name}\nFragment CallBack : $fragmentCallBack${
+            if (isViewAdded) {
+                "\nFragment View Lifecycle : ${viewLifecycleOwner.lifecycle.currentState.name}"
+            } else ""
+        } "
+        (activity as MainActivity).printActivityState(log,isViewAdded)
+        Log.d(TAG, log)
     }
 
     companion object {
