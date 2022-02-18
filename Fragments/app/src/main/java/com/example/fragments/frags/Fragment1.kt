@@ -6,12 +6,9 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.persistableBundleOf
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import com.example.fragments.MainActivity
+import com.example.activities.MainActivity
 import com.example.fragments.R
-import com.example.viewModels.MainViewModel
 
 class Fragment1 : Fragment(R.layout.layout_fragment_one) {
 

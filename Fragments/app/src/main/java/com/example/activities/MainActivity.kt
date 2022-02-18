@@ -1,4 +1,4 @@
-package com.example.fragments
+package com.example.activities
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,6 @@ import android.util.AttributeSet
 import android.util.Log
 import android.view.View
 import android.widget.Button
-import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.Switch
 import androidx.activity.viewModels
@@ -17,6 +16,7 @@ import androidx.fragment.app.replace
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adapters.LogPrinterRVAdapter
+import com.example.fragments.R
 import com.example.fragments.frags.Fragment1
 import com.example.viewModels.MainViewModel
 
@@ -69,9 +69,7 @@ class MainActivity : AppCompatActivity() {
         stackEnabledUI.setOnCheckedChangeListener { compoundButton, b ->
             stackEnabled = b
         }
-        addFrag.setOnClickListener {
-            addFragment()
-        }
+        addFrag.setOnClickListener { addFragment() }
 
         replaceFrag.setOnClickListener { replaceFragment() }
         adapter = LogPrinterRVAdapter(fragmentLogs)
@@ -133,7 +131,7 @@ class MainActivity : AppCompatActivity() {
         printActivityState("onResume Callback")
         // if we put into the on Create it show error
         // because the fragment is not yet added to the host fragmentManager
-//         supportFragmentManager.fragments[0]
+        //  supportFragmentManager.fragments[0]
     }
 
     fun printActivityState(callback: String, logsonly: Boolean = false) {
