@@ -1,0 +1,72 @@
+For using Hilt DI use following steps
+
+
+1) Add dependencies in gradle file (Checkout build.gradle(app) and build.gradle(Project))
+2) Create an CustomApplication class and extend with Application class and Mark as @HiltAndroidApp (checkout HiltApplication class)
+3)
+
+Hilt provides the following components:
+
+---------------------------------------------------------------------------
+Hilt component	            |    Injector for                             |
+----------------------------+----------------------------------------------
+SingletonComponent	        |   Application                               |
+ActivityRetainedComponent   |   	N/A                                   |
+ViewModelComponent	        |   ViewModel                                 |
+ActivityComponent	        |   Activity                                  |
+FragmentComponent	        |   Fragment                                  |
+ViewComponent	            |   View                                      |
+ViewWithFragmentComponent	|   View annotated with @WithFragmentBindings |
+ServiceComponent	        |   Service                                   |
+---------------------------------------------------------------------------
+Note: Hilt doesn't generate a component for broadcast receivers because Hilt injects broadcast receivers directly from SingletonComponent.
+
+Component lifetimes
+----------------------------------------------------------------------------------------
+Generated component       |	        Created at	           |      Destroyed at         |
+--------------------------+--------------------------------+---------------------------|
+SingletonComponent	      |   Application#onCreate()	   |  Application destroyed    |
+ActivityRetainedComponent |   Activity#onCreate()	       |  Activity#onDestroy()     |
+ViewModelComponent	      |   ViewModel created	           |  ViewModel destroyed      |
+ActivityComponent	      |   Activity#onCreate()	       |  Activity#onDestroy()     |
+FragmentComponent	      |   Fragment#onAttach()          |  Fragment#onDestroy()     |
+ViewComponent	          |   View#super()	               |  View destroyed           |
+ViewWithFragmentComponent |	  View#super()	               |  View destroyed           |
+ServiceComponent	      |   Service#onCreate()	       |  Service#onDestroy()      |
+----------------------------------------------------------------------------------------
+
+Note: ActivityRetainedComponent lives across configuration changes,
+ so it is created at the first Activity#onCreate() and destroyed at the last Activity#onDestroy().
+
+
+ Component scopes
+------------------------+---------------------------------------+-----------------------------
+ Android class	        |           Generated component	        |      Scope                  |
+ -----------------------+---------------------------------------+-----------------------------|
+ Application	        |   SingletonComponent	                |  @Singleton                 |
+ Activity	            |   ActivityRetainedComponent	        |  @ActivityRetainedScoped    |
+ ViewModel	            |   ViewModelComponent	                |  @ViewModelScoped           |
+ Activity	            |   ActivityComponent	                |  @ActivityScoped            |
+ Fragment	            |   FragmentComponent	                |  @FragmentScoped            |
+ View	                |   ViewComponent	                    |  @ViewScoped                |
+ View annotated         | 	                                    |                             |
+ with                   |   ViewWithFragmentComponent           |  @ViewScoped                |
+ @WithFragmentBindings	|                                       |                             |
+ Service	            |   ServiceComponent	                |  @ServiceScoped             |
+ ----------------------------------------------------------------------------------------------
+
+
+Component default bindings
+---------------------------------------------------------------------------------------
+Application component                |         Default bindings                       |
+-------------------------------------+------------------------------------------------|
+SingletonComponent                   |         Application                            |
+ActivityRetainedComponent            |         Application                            |
+ViewModelComponent                   |         SavedStateHandle                       |
+ActivityComponent                    |         Application, Activity                  |
+FragmentComponent                    |         Application, Activity, Fragment        |
+ViewComponent                        |         Application, Activity, View            |
+ViewWithFragmentComponent            |         Application, Activity, Fragment, View  |
+ServiceComponent                     |         Application, Service                   |
+---------------------------------------------------------------------------------------
+
