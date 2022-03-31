@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <padding android:bottom="@dimen/record_padding" android:left="@dimen/record_padding" android:right="@dimen/record_padding" android:top="@dimen/record_padding" />
+            <solid android:color="@color/red900" />
+            <stroke android:width="@dimen/record_inner_width" android:color="@color/black" />
+            <size android:width="@dimen/record_outer_width" android:height="@dimen/record_outer_width" />
+        </shape>
+    </item>
+</selector>

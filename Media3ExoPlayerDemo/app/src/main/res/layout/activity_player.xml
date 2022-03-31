@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerActivity">
+
+    <androidx.media3.ui.AspectRatioFrameLayout
+        app:resize_mode="fill"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.media3.ui.PlayerView
+            android:id="@+id/player_view"
+            app:resize_mode="fit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:show_shuffle_button="true"
+            app:show_subtitle_button="true"
+            app:hide_on_touch="true"
+            app:scrubber_dragged_size="20dp"
+            app:hide_during_ads="true"
+            app:use_artwork="true" />
+
+    </androidx.media3.ui.AspectRatioFrameLayout>
+
+<!--    <ImageView-->
+<!--        android:id="@+id/imageViewTrack"-->
+<!--        android:layout_width="50dp"-->
+<!--        android:layout_height="50dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--    <TextView-->
+<!--        android:id="@+id/titleTextView"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:background="@color/design_default_color_primary_variant"-->
+<!--        android:minHeight="50dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toEndOf="@+id/imageViewTrack"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

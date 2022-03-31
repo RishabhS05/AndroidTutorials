@@ -1,0 +1,52 @@
+{
+  "media": [
+    {
+      "id": "sample1",
+      "title": "Sample1 ",
+      "album": "Sample Test 2",
+      "artist": "The 126ers",
+      "genre": "Rock",
+      "source": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+      "image": "https://res.cloudinary.com/demo/image/upload/v1312461204/sample.jpg",
+      "site": "https://www.soundhelix.com/audio-examples"
+    },
+    {
+      "id": "video_01",
+      "title": "Future Scenario",
+      "album": "Mango Open Movie project",
+      "artist": "Blender Foundation",
+      "genre": "Video",
+      "source": "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4",
+      "image": "https://cdn.pixabay.com/photo/2014/10/09/13/14/video-481821_960_720.png"
+    },
+    {
+      "id": "video_02",
+      "title": "TTML Netflix Japanese examples (IMSC1.1)",
+      "source": "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mov-file.mov",
+      "subtitle_uri": "https://storage.googleapis.com/exoplayer-test-media-1/ttml/netflix_japanese_ttml.xml",
+      "album": "Video with subtitle",
+      "artist": "Netflix",
+      "genre": "Video",
+      "image": "https://cdn.pixabay.com/photo/2014/10/09/13/14/video-481821_960_720.png"
+    },
+    {
+      "id": "Video_3",
+      "title": "Intro - The Way Of Waking Up (feat. Alan Watts)",
+      "album": "Wake Up",
+      "artist": "The Kyoto Connection",
+      "genre": "Electronic",
+      "source": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4",
+      "image": "https://storage.googleapis.com/uamp/The_Kyoto_Connection_-_Wake_Up/art.jpg",
+      "site": "http://freemusicarchive.org/music/The_Kyoto_Connection/Wake_Up_1957/"
+    },
+    {
+      "id": "Elephant_1",
+      "title": "Elephant Dream",
+      "album": "By Blender Foundation",
+      "artist": "The Kyoto Connection",
+      "genre": "Video",
+      "source": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+      "image": "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+    }
+  ]
+}
