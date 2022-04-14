@@ -1,8 +1,9 @@
-package com.example.activities
+package com.example.fragments.activities
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
@@ -15,10 +16,10 @@ import androidx.fragment.app.commit
 import androidx.fragment.app.replace
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.adapters.LogPrinterRVAdapter
+import com.example.fragments.adapters.LogPrinterRVAdapter
 import com.example.fragments.R
 import com.example.fragments.frags.Fragment1
-import com.example.viewModels.MainViewModel
+import com.example.fragments.viewModels.MainViewModel
 
 class MainActivity : AppCompatActivity() {
     companion object
@@ -43,20 +44,36 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         printActivityState("onDestroy Callback")
+        super.onDestroy()
+
     }
 
     override fun onRestart() {
         super.onRestart()
-        printActivityState("onPause Callback")
+        printActivityState("onRestart Callback")
     }
 
     override fun onStop() {
-        super.onStop()
         printActivityState("onStop Callback")
+        super.onStop()
+
     }
 
+    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
+        super.onSaveInstanceState(outState, outPersistentState)
+        printActivityState("onSaveInstanceState Callback")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        printActivityState("onSaveInstanceState(outState: Bundle) Callback")
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        printActivityState("onRestoreInstanceState Callback")
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
