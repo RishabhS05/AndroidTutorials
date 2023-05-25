@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    .Train{
+        height:200px;
+        width:200px; 
+        top:100px;
+        position: absolute; 
+       
+    }
+    .Button{
+        height:150px;
+        width:150px;
+        top :500px;
+        position:absolute;
+        
+       
+    }
+    </style>
+    <script>  var count1 =0;
+    var count2 =0;
+    function counterInc(imgobj){
+        var x = document.getElementById(imgobj);
+        count2+=10;
+        x.style.left=count2+"px"; 
+        
+    }
+    function counter(imgobj){
+        var x = document.getElementById(imgobj);
+        count1+=10;
+        x.style.right=count1+"px"; 
+    }
+    </script>
+</head>
+<body>
+   
+    <img  id = "train1" src= "train.gif" class= "Train" style="align:right; right:10px">
+    <img  id = "train2" src= "train2.gif" class= "Train" style="align:left"/>
+    <input id ="button1" value="click here" type="button"   onClick ="counterInc('train2')" class = "Button" style="align:right;right :70px">
+    <input id ="button2"  type= "button"  onClick ="counter('train1')"class = "Button" style= "align:left " >
+</body>
+</html>

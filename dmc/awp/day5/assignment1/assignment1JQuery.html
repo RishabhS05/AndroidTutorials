@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="trainStyles.css">
+  <script src = "/jquery-3.3.1.min.js"></script>
+  <!-- <script>
+      var count1=0;
+      var count2=0;
+  $(document).ready(()=>{
+      $('#button').click(()=>{
+        var x = $('#train');
+count1+=20;
+console.log("s"+x.width());
+if (count1>=$('#track').width()) {return ()=>{
+console.log("l"+this.x.width);
+}
+}  
+          });
+
+  });
+  
+  </script> -->
+    <script>  
+    var count1 =0;
+    var count2 =0;
+        // jQuery(document).ready();// ready function sare element load hue ki nhi ye batata hai  
+    function counterInc(imgobj){//debugger; 
+        var x = document.getElementById(imgobj);
+        var y = document.getElementById("track").width;
+        if (count2>=y){ return counter(imgobj);}  
+     else {   count2+=20;
+        x.style.left=count2+"px"; 
+  window.setTimeout("counterInc('train')",500); }
+    }
+    function counter(imgobj){//debugger;
+        var x = document.getElementById(imgobj);
+        count1+=35; 
+        console.log('c1'+count1);
+        x.style.top=count1+"px";
+        if (count1>=1000){return distroy(imgobj);}
+       else { window.setTimeout("counter('train')",200); }
+    }
+    function distroy(imgobj){
+        var x = document.getElementById(imgobj);
+        x.style.opacity =0;
+    }
+    </script>
+</head>
+<body>
+    <div>
+    <table border="1">
+        <tr><img  id = "track" src= "trainTrack.jpg"class = "Track">
+    <td><img  id = "train" src= "train2.gif" class= "Train"/></td>
+    </tr>
+</table>
+<!-- <input id ="button" value="Train 1" type="button" class = "Button" style="align:right;right :70px"> -->
+    <input id ="button1" value="Train 1" type="button"onClick ="counterInc('train')" class = "Button" style="align:right;right :70px">
+</div></body>
+</html>

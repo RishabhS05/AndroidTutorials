@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="/jquery-3.3.1.min.js"></script>
+    <script>
+         $(document).ready(function(){
+             $('#btn').click(function(){
+                 debugger;
+                var x =$('#first').val();
+                var y = $('#second').val();
+
+               // alert((x+y));
+             });
+         });
+    </script>
+</head>
+<body>
+    x: <input type="text" id = "first">
+    y:<input type="text" id ="second">
+   <input type="button" value="Do nothing" id = "btn">
+</body>
+</html>

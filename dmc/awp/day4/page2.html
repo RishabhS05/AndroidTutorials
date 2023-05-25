@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test HTML Basics</title>
+    <style>
+    .SpanErrorClass{
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    align: right; 
+    }</style>
+    <script src ="/validiate.js"></script> 
+</head>
+<body>
+    <table border="1" height="100%" width="100%">
+        <tr>
+            <td width="100px">
+                <a href="01_DemoBasic.html">
+                    <!-- <img src="small.png" alt="Logo Here!"> -->
+                </a>
+            </td>
+            <td colspan="2">Welcome to our company</td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <table border="0" width="100%"> 
+                    <tr>    
+                         <td> 
+                            <a href="ContactUs.html">Contact Us</a> 
+                         </td>
+                         <td> 
+                            <a href="Management.html">Management</a> 
+                        </td>
+                        <td> 
+                            <a href="Aboutus.html">About Us</a> 
+                        </td>
+                        <td> 
+                            <a href="Vision.html">Our Vision</a> 
+                        </td>
+                        <td> 
+                                <a href="Resgister.html">Register</a> 
+                        </td>
+
+                    </tr>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="3">
+                <table border="1" width="100%">
+                    <tr>
+                        <td width="50px">
+                                <br/>
+                            <a href="ContactUs.html">Contact Us</a> <br/><br/>
+                            <a href="Management.html">Management</a> <br/><br/>
+                            <a href="Aboutus.html">About Us</a> <br/><br/>
+                            <a href="Vision.html">Our Vision</a> <br/><br/>
+                            <a href="02_DemoResgister.html">Register</a> <br/><br/>
+                        </td>
+                        <td>
+                            <h1>Register Here:</h1>
+                            <center>
+                                    <table> 
+                                            <tr>    
+                                                <td>    
+                                                    Name:
+                                                </td>
+                                                <td>    
+                                                    <input type="text" id="txtName"placeholder="Rishabh" ">
+                                                </td>
+                                                <td>    
+                                                    <span id="spnNameErr" width="150px"class = "SpanErrorClass" ></span>
+                                                </td>
+                                            </tr>
+                                            <tr>    
+                                                <td>    
+                                                    Age:
+                                                </td>
+                                                <td>    
+                                                    <input type="text" id="txtAge" placeholder="18">
+                                                </td>
+                                                <td>    
+                                                    <span id="spnAgeErr" width="150px" class = "SpanErrorClass"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>    
+                                                <td>    
+                                                    Address:
+                                                </td>
+                                                <td>    
+                                                    <input type="text" id="txtAddress" placeholder="address" ">
+                                                </td>
+                                                <td>    
+                                                    <span id="spnAddressErr" width="150px"class = "SpanErrorClass"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>    
+                                                <td>    
+                                                    EMail:
+                                                </td>
+                                                <td>    
+                                                    <input type="text" id="txtEmail" placeholder="xyz@gmail.com">
+                                                </td>
+                                                <td>    
+                                                    <span id="spnEMailErr" width="150px"class = "SpanErrorClass"class = "SpanErrorClass"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>    
+                                                <td>    
+                                                    Gender:
+                                                </td>
+                                                <td>    
+                                                    <input  type="radio" name="radioGender">M
+                                                    <input  type="radio" name="radioGender">F   
+                                                </td>
+                                                <td>    
+                                                    <span id="spnGenderErr" width="150px"class = "SpanErrorClass"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>    
+                                                <td>    
+                                                    Country:
+                                                </td>
+                                                <td>    
+                                                    <select name="cmbCountry" id="cmbCountry">
+                                                        <option value="1">India</option>
+                                                        <option value="2">UK</option>
+                                                        <option value="3">USA</option>
+                                                    </select>
+                                                </td>
+                                                <td>    
+                                                    <span id="spnCountryErr" width="150px" class = "SpanErrorClass"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>    
+                                                <td>    
+                                                    Liking(s):
+                                                </td>
+                                                <td>    
+                                                    <select multiple="multiple" name="lstHobbies" id="lstHobbies">
+                                                        <option value="1">Reading</option>
+                                                        <option value="2">Writing</option>
+                                                        <option value="3">Swimming</option>
+                                                        <option value="4">Music</option>
+                                                    </select>
+                                                </td>
+                                                <td>    
+                                                    <span id="spnLikingErr" width="150px" class = "SpanErrorClass"></span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="3">
+                                                    <center>
+                                                        <input type="button" value="Register" id="btnRegister" onclick="callMe()">
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                        </table>
+                            </center>
+                        </td>
+                        <td width="100px">
+                            <center>
+                                Ad Here!
+                                <!-- <marquee>Ad Here!</marquee> -->
+                            </center>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <center>Developed by Sunbeam, Pune</center>
+            </td>
+        </tr>
+
+        
+    </table>
+    <br/><br/><br/><br/> 
+</body>
+</html>

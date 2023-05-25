@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DivPlay</title>
+    <script>
+    function apply (){debugger;
+        var h =document.getElementById("height1").value;
+        var w = document.getElementById("width1").value;
+        var col = document.getElementById("color1").value;
+        var d = document.getElementById("div1");
+         if (h==""||w==""){alert("some fields are empty!!!!");
+         return;}
+        d.style.width = w;
+        d.style.height= h;
+        d.style.backgroundColor=col;
+    } 
+    </script>
+    
+</head>
+<body>
+   Height: <input type="text" id="height1" placeholder="Height">
+   <br>
+   Width : <input type="text" id = "width1" placeholder="Width">
+   <br>
+   Color : <input type="color" id = "color1">
+   <br>
+   <input type="button" id = "btn" value = "ClickToApplyCSS" onclick="apply()">
+<div id = "div1"></div>
+</body>
+</html>
