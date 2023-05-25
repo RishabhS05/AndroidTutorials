@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+    td{
+width:200px;
+height:50px;
+    }
+    </style>
+<head>
+    <title>Document</title>
+<script src="/jquery-1.8.2.min.js"> </script>
+<script>
+$(document).ready(function(){
+    var index=1;
+    $('#btn1').click(function(){
+        $('#dataTable').append(`<tr><td><span id="Num">${index++}</span></td><td> <input type="text" id="txtName"></td><td><span id="tstatus"></span></td><td> <input type="button" id="remov" value="X"></td></tr>`);
+    });
+    $('#remov').live('click',function(){debugger;
+        var r =$(this).parent().parent().remove();
+       var x = $(this).parent().parent().parent();
+       index--;
+       for (var i = 1; i<=index;i++){
+        console.log($($(this).parent().parent().parent().children()[i]).children()[0].attr());
+       }
+   
+    });
+}); 
+</script>
+</head>
+<body>
+    <input type= "button" id = "btn1" value = "Add">
+    <br>
+<table id= "dataTable" border="2">
+ <tr>
+<th>No</th>
+<th>Name</th>
+<th>Status</th>
+<th></th>  
+</tr>
+</table>
+<br>
+</body>
+</html>
